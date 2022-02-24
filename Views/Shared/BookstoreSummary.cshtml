@@ -1,0 +1,36 @@
+﻿@{
+}
+@* need to use to connect to Index *@
+@model Books
+
+<div class="card car-outline-primary m-1 p-1">
+    <div class="bg-light p-1">
+        <h4>@Model.Title</h4>
+
+        <ul>
+            <li class="badge badge-pill badge-primary">Price: @Model.Price </li>
+            <li>Author: @Model.Author</li>
+            <li>Publisher: @Model.Publisher</li>
+            <li>ISBN: @Model.Isbn</li>
+            <li>Classification: @Model.Classification</li>
+            <li>Category: @Model.Category</li>
+            <li>Page Count: @Model.PageCount</li>
+        </ul>
+
+        <br />
+
+        <form method="post" asp-page="/Cart">
+
+            <input type="hidden" asp-for="@Model.BookId" />
+            <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+
+
+            <span class="card-text">
+                <button type="submit" class="btn btn-success btn-sm float-end">Add to Cart</button>
+            </span>
+        </form>
+    </div>
+
+</div>
+
+

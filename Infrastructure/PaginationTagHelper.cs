@@ -15,7 +15,7 @@ namespace BookStore.Infrastructure
     public class PaginationTagHelper : TagHelper
     {
         //Dynamically create page links
-
+        
         private IUrlHelperFactory uhf;
 
         public PaginationTagHelper(IUrlHelperFactory temp)
@@ -30,6 +30,8 @@ namespace BookStore.Infrastructure
         //Different than View Context
         public PageInfo PageModel { get; set; }
         public string PageAction { get; set; }
+
+        //for bootstrap
         public bool PageClassesEnabled { get; set; } = false;
         public string PageClass { get; set; }
         public string PageClassNormal { get; set; }
@@ -41,6 +43,7 @@ namespace BookStore.Infrastructure
 
             TagBuilder final = new TagBuilder("div");
 
+            // for page numbers, set page # as i, go to that page
             for (int i = 1; i <= PageModel.TotalPages; i++)
             {
                 TagBuilder tb = new TagBuilder("a");
