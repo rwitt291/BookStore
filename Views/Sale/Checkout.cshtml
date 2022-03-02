@@ -1,0 +1,50 @@
+﻿@{
+}
+@model Sale
+
+<h2>Check out now</h2>
+<p>Please enter your details to complete the sale.</p>
+
+<form method="post" asp-controller="Sale" asp-action="Checkout">
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <h4>Ship To</h4>
+
+    <div class="form-group">
+        <label asp-for="Name">Name:</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email">Email:</label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+
+    <h4>Address</h4>
+    <div class="form-group">
+        <label asp-for="AddressLine1">Address Line 1:</label>
+        <input asp-for="AddressLine1" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="AddressLine2">Address Line 2:</label>
+        <input asp-for="AddressLine2" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="City">City:</label>
+        <input asp-for="City" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="State">State:</label>
+        <input asp-for="State" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Zipcode">Zipcode:</label>
+        <input asp-for="Zipcode" class="form-control" />
+    </div>
+
+    <div class="float-end">
+        <input class="btn btn-primary" type="submit" value="Pay Now" />
+    </div>
+
+</form>
