@@ -8,12 +8,15 @@
     <link href="/lib/font-awesome/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="bg-dark text-white p-2">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col navbar-brand">Book Store</div>
-                <div class="col-6 text-right">
-                    <vc:cart-summary />
+    @* My added bootstrap was creating a sticky header, where the top nav-bar stays there when you scroll. *@
+    <div class="sticky-top">
+        <div class="bg-dark text-white p-2">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col navbar-brand">Book Store</div>
+                    <div class="col-6 text-right">
+                        <vc:cart-summary />
+                    </div>
                 </div>
             </div>
         </div>
@@ -21,11 +24,18 @@
     <div class="row m-1 p-1">
         <div id="categories" class="col-3">
             <vc:category></vc:category>
+            </br>
+            @* This is my added boostrap: I am adding a youtube video to the left column under the categories. *@
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe width="660" height="371" src="https://www.youtube.com/embed/iykcK-bKxgY"
+                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+                    clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </div>
         <div class="col-9">
             @RenderBody()
+
         </div>
-    </div>
 
 </body>
 </html>

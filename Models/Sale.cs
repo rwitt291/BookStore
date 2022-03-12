@@ -28,5 +28,9 @@ namespace BookStore.Models
         public string State { get; set; }
         [Required(ErrorMessage = "Please enter a zipcode:")]
         public string Zipcode { get; set; }
+
+//not passed through URL
+        [BindNever]
+        public bool PaymentReceived { get; set; }
     }
 }
